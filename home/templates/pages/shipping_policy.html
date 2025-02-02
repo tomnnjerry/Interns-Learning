@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+
+{% endblock header %}
+
+{% block css %}
+    
+{% endblock css %}
+    
+
+
+{% block body %}
+    <!-- page-title -->
+    <div class="tf-page-title style-2">
+        <div class="container-full">
+            <div class="heading text-center">Shipping Policy</div>
+        </div>
+    </div>
+    <!-- /page-title -->
+    <!-- FAQ -->
+    <section class="flat-spacing-11">
+        <div class="container">
+            <div class="tf-accordion-wrap d-flex justify-content-between">
+               
+                <div class="content">
+                    <h5 class="mb_24">Shipping Policy</h5>
+                    <div class="flat-accordion style-default has-btns-arrow mb_60">
+                        <div class="flat-toggle active">
+                            <div class="toggle-title active">What are the shipping options available?</div>
+                            <div class="toggle-content">
+                                <p>
+                                    We offer the following shipping options for your convenience:
+                                </p>
+                                <ul>
+                                    <li><strong>Standard Shipping</strong>: Delivery within [5-7 business days] for domestic orders.</li>
+                                    <li><strong>Express Shipping</strong>: Delivery within [2-3 business days] for an additional fee.</li>
+                                    <li><strong>International Shipping</strong>: Delivery timelines vary based on location, typically [7-14 business days].</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="flat-toggle">
+                            <div class="toggle-title">What are the shipping charges?</div>
+                            <div class="toggle-content">
+                                <p>
+                                    - <strong>Domestic Orders</strong>: Free shipping on orders above ₹10,000. A flat rate of ₹200 applies for orders below this amount.<br>
+                                    - <strong>International Orders</strong>: Shipping charges are calculated based on the destination and weight of the package, visible at checkout.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flat-toggle">
+                            <div class="toggle-title">How can I track my order?</div>
+                            <div class="toggle-content">
+                                <p>
+                                    Once your order is shipped, we will send you a tracking link via email. You can use this link to monitor your package's progress in real-time. 
+                                    Alternatively, you can log in to your account on our website and view the order tracking details under "My Orders."
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flat-toggle">
+                            <div class="toggle-title">What is the estimated delivery time?</div>
+                            <div class="toggle-content">
+                                <p>
+                                    - <strong>Domestic Orders</strong>: Standard shipping takes [5-7 business days], and express shipping takes [2-3 business days].<br>
+                                    - <strong>International Orders</strong>: Delivery timelines vary, typically ranging from [7-14 business days], depending on the destination.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flat-toggle">
+                            <div class="toggle-title">Do you ship to multiple addresses?</div>
+                            <div class="toggle-content">
+                                <p>
+                                    Currently, we can only ship to one address per order. If you would like to ship to multiple addresses, please place separate orders for each destination.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flat-toggle">
+                            <div class="toggle-title">What happens if my package is delayed?</div>
+                            <div class="toggle-content">
+                                <p>
+                                    While we strive to deliver your orders on time, unforeseen circumstances like weather conditions or courier delays may affect delivery times. 
+                                    If your package is delayed, please contact our customer service team at [support@koxari.com], and we will assist you promptly.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flat-toggle">
+                            <div class="toggle-title">Do you offer international shipping?</div>
+                            <div class="toggle-content">
+                                <p>
+                                    Yes, we ship to select international destinations. International shipping charges and delivery timelines are calculated at checkout. 
+                                    Please note that customers are responsible for any applicable customs duties or import taxes in their country.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="box tf-other-content radius-10 bg_grey-8">
+                    <h5 class="mb_20">Have a question</h5>
+                    <p class="text_black-2 mb_40">If you have an issue or question that requires immediate assistance, you can click the button below to chat live with a Customer Service representative.<br><br>Please allow 06 - 12 business days from the time your package arrives back to us for a refund to be issued.</p>
+                    <div class="d-flex gap-20 align-items-center">
+                        <a href="{% url 'home:contact' %} class="tf-btn radius-3 btn-fill animate-hover-btn justify-content-center">Contact us</a>
+                        <a href="#" class="tf-btn btn-line">Whatsapp chat<i class="icon icon-arrow1-top-left"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /FAQ -->
+{% endblock body %}
+    
+
+
+{% block js %}
+    
+{% endblock js %}

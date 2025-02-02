@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+
+{% endblock header %}
+
+{% block css %}
+    
+{% endblock css %}
+    
+
+
+{% block body %}
+    <!-- page-title -->
+    <div class="tf-page-title style-2">
+        <div class="container-full">
+            <div class="heading text-center">Your Wishlist, Your Legacy</div>
+            
+            <p class="sub-title text-center mt-2">Your favorites are waiting! Add them to your cart now and make them yours before they're gone.</p>
+        </div>
+    </div>
+    <!-- /page-title -->
+    <section class="flat-spacing-15 pb_0">
+        <div class="container">
+            
+
+            {% if data  %}
+            <div class="hover-sw-nav hover-sw-3">
+                <div dir="ltr" class="swiper tf-sw-product-sell wrap-sw-over" 
+                data-preview="4" data-tablet="3" 
+                data-mobile="2" 
+                data-space-lg="30" 
+                data-space-md="15" data-pagination="2" data-pagination-md="3" data-pagination-lg="3">
+                    <div class="swiper-wrapper">
+                        <!-- card product 2 -->
+                        {% for iee in data   %}
+                             
+                             {% for ie in iee.product.all  %}
+                             {% include 'product_style2.html' %}
+                             {% endfor %}
+                                
+                        {% endfor %}    
+                    </div>
+                </div>
+                <div class="nav-sw nav-next-slider nav-next-product box-icon w_46 round"><span class="icon icon-arrow-left"></span></div>
+                <div class="nav-sw nav-prev-slider nav-prev-product box-icon w_46 round"><span class="icon icon-arrow-right"></span></div>
+            </div>
+            {% else %}
+            <div class="tf-page-cart text-center mt_30 mb_200">
+                <h5 class="mb_24">Your wishlist is empty</h5>
+                <p class="mb_24">You may check out all the available products and buy some in the shop</p>
+                <a href="{% url 'home:product' %}" class="tf-btn btn-sm radius-3 btn-fill btn-icon animate-hover-btn">Return to shop<i class="icon icon-arrow1-top-left"></i></a>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+{% endblock body %}
+    
+
+
+{% block js %}
+    
+{% endblock js %}

@@ -1,0 +1,115 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+
+{% endblock header %}
+
+{% block css %}
+    
+{% endblock css %}
+    
+
+
+{% block body %}
+    <!-- page-title -->
+    <div class="tf-page-title style-2">
+        <div class="container-full">
+            <div class="heading text-center">Returns & Exchange Policy</div>
+        </div>
+    </div>
+    <!-- /page-title -->
+    <!-- FAQ -->
+    <section class="flat-spacing-11">
+        <div class="container">
+            <div class="tf-accordion-wrap d-flex justify-content-between">
+               
+                <div class="content">
+                    <h5 class="mb_24">Returns and Exchange Policy</h5>
+                    <div class="flat-accordion style-default has-btns-arrow mb_60">
+                        <div class="flat-toggle active">
+                            <div class="toggle-title active">What is your return policy?</div>
+                            <div class="toggle-content">
+                                <p>
+                                    - <strong>Time Frame</strong>: Returns are accepted within [14 days] of delivery.<br>
+                                    - <strong>Condition</strong>: Items must be unworn, unwashed, and in their original packaging with all tags intact.<br>
+                                    - <strong>Non-Returnable Items</strong>: Custom-made products, intimate apparel, and final sale items are not eligible for returns.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flat-toggle">
+                            <div class="toggle-title">What is the process for returns?</div>
+                            <div class="toggle-content">
+                                <p>
+                                    - <strong>Step 1</strong>: Contact our customer care team at [support@koxari.com] with your order details and reason for return.<br>
+                                    - <strong>Step 2</strong>: Ship the item using a trackable shipping method. Return shipping costs are borne by the customer.<br>
+                                    - <strong>Step 3</strong>: Upon receiving the item, we will inspect it and notify you about the approval or rejection of your return.<br>
+                                    - <strong>Refund/Exchange</strong>: If approved, we will process your exchange or refund within [7-10 business days].
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flat-toggle">
+                            <div class="toggle-title">Can I exchange an item?</div>
+                            <div class="toggle-content">
+                                <p>
+                                    Yes, exchanges are available for eligible items. You can request an exchange for a different size, color, or product variation.<br>
+                                    - <strong>Eligibility</strong>: Exchanges must be initiated within [14 days] of delivery.<br>
+                                    - <strong>Process</strong>: Contact us at [support@koxari.com] to arrange the exchange. Items must meet the same condition as returns.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flat-toggle">
+                            <div class="toggle-title">Are there any exceptions to the exchange policy?</div>
+                            <div class="toggle-content">
+                                <p>
+                                    - <strong>Custom-Made Items</strong>: Personalized or custom-made items cannot be exchanged.<br>
+                                    - <strong>Final Sale</strong>: Items marked as final sale are not eligible for exchange.<br>
+                                    - <strong>Damaged/Defective Items</strong>: If you receive a damaged or defective product, please notify us immediately for a replacement.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flat-toggle">
+                            <div class="toggle-title">Who bears the shipping costs for returns or exchanges?</div>
+                            <div class="toggle-content">
+                                <p>
+                                    - <strong>Return Shipping</strong>: Customers are responsible for return shipping costs unless the item is defective or damaged.<br>
+                                    - <strong>Exchange Shipping</strong>: For exchanges, shipping costs for sending the replacement item will be covered by Koxari.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flat-toggle">
+                            <div class="toggle-title">How do I contact customer support for returns or exchanges?</div>
+                            <div class="toggle-content">
+                                <p>
+                                    For any assistance regarding returns or exchanges, reach out to us at:
+                                </p>
+                                <ul>
+                                    <li><strong>Email</strong>: [support@koxari.com]</li>
+                                    <li><strong>Phone</strong>: [+91-123-456-7890]</li>
+                                    <li><strong>Address</strong>: [123 Fashion Street, Mumbai, India]</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="box tf-other-content radius-10 bg_grey-8">
+                    <h5 class="mb_20">Have a question</h5>
+                    <p class="text_black-2 mb_40">If you have an issue or question that requires immediate assistance, you can click the button below to chat live with a Customer Service representative.<br><br>Please allow 06 - 12 business days from the time your package arrives back to us for a refund to be issued.</p>
+                    <div class="d-flex gap-20 align-items-center">
+                        <a href="{% url 'home:contact' %} class="tf-btn radius-3 btn-fill animate-hover-btn justify-content-center">Contact us</a>
+                        <a href="#" class="tf-btn btn-line">Whatsapp chat<i class="icon icon-arrow1-top-left"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /FAQ -->
+{% endblock body %}
+    
+
+
+{% block js %}
+    
+{% endblock js %}

@@ -1,0 +1,207 @@
+<!-- this is for quick view -->
+<script>
+    $(document).on('click', '.quickview', function() {
+        var productId = $(this).data('id');
+        $.ajax({
+            url: "{% url 'home:quick_view_product' %}",
+            method: "POST",
+            data: {
+                'product_id': productId,
+            },
+            success: function(response) {
+                $('#quick_view').html(response.html);  // Corrected this line
+                $('#quick_view').modal('show');  // Corrected this line
+            }
+        });
+    });
+</script>
+
+
+<!-- this is for add to cart-->
+<script>
+    $(document).on('click', '.manish-add-to-cart-view', function(e) {
+        e.preventDefault(); // Prevent default form submission
+        
+        // Dynamically fetch the latest values when the button is clicked
+        var productId = $('#view_product-id').val(); // Assuming there's an input or element with updated product ID
+        var productQty = $('#view_quantity').val(); // Assuming there's an input or element for quantity
+        var productSize = $('#view_size').val(); // Assuming there's an input or element for quantity
+
+        $.ajax({
+            url: "{% url 'home:add_to_cart_view' %}", // Replace with your backend URL
+            method: "POST",
+            data: {
+                'product_id': productId,
+                'qty': productQty,
+                'size': productSize,
+            },
+            success: function(response) {
+                // Clear and update the cart message dynamically
+                $('#change-cart-message-view').empty();
+                $('#change-cart-message-view').append(
+                    `<span><i class="fa fa-check"></i> Added In Cart</span>`
+                );
+                $('.refresh-cart-message').addClass('check-message-of-cart');
+                $('.checkout-btn').removeClass('d-none');
+
+
+                $('#change-cart-message-view2').empty();
+                $('#change-cart-message-view2').append(
+                    `<span><i class="fa fa-check"></i> Added In Cart</span>`
+                );
+                
+                
+                
+            },
+            error: function(error) {
+                console.error("Error adding to cart:", error);
+            }
+        });
+    });
+</script>
+
+<script>
+    $(document).on('click', '.check-message-of-cart', function() {
+        $('#change-cart-message-view').empty();
+        $('#change-cart-message-view').append(
+                    `<span> <i class="fa fa-shopping-cart"></i>&nbsp; Update Cart </span>`
+        );
+        $('#change-cart-message-view2').empty();
+        $('#change-cart-message-view2').append(
+                    `<span> <i class="fa fa-shopping-cart"></i>&nbsp; Update Cart </span>`
+        );
+    });
+</script>
+
+ <!-- this is for wishlist -->
+<script>
+    $(document).on('click', '.wishlist', function() {
+        var productId = $(this).data('id');
+        
+        $.ajax({
+            url: "{% url 'home:wishlist' %}",
+            method: "POST",
+            data: {
+                'product_id': productId,
+            },
+            success: function(response) {
+               var item = response.item
+               var myclass =response.class
+               
+               if (item == true){
+                    $(myclass).empty()
+                    $(myclass).append(
+                        `
+                        <span class="icon icon-heart"></span>
+                        <span class="tooltip">Remove From Wishlist</span>
+                        <span class="icon icon-delete"></span>
+                        `
+                    )
+               }
+               else{
+                    $(myclass).empty()
+                        $(myclass).append(
+                            `
+                            <span class="icon icon-heart"></span>
+                            <span class="tooltip">Add to Wishlist</span>
+                            <span class="icon icon-delete"></span>
+                            `
+                        )
+                }
+            }
+        });
+    });
+</script>
+
+<script>
+    $(document).on('click', '.mywishlist', function() {
+        var productId = $(this).data('id');
+        
+        $.ajax({
+            url: "{% url 'home:wishlist' %}",
+            method: "POST",
+            data: {
+                'product_id': productId,
+            },
+            success: function(response) {
+               var item = response.item
+               var myclass =response.class
+               
+               if (item == true){
+                    
+               }
+               else{
+                   
+                }
+            }
+        });
+    });
+</script>
+
+
+
+ <!-- this is for wishlist -->
+ <script>
+    $(document).on('click', '.remove-cart-item', function() {
+        var productId = $(this).data('id');
+        
+        $.ajax({
+            url: "{% url 'home:cart_removal' %}",
+            method: "POST",
+            data: {
+                'product_id': productId,
+            },
+            success: function(response) {
+              
+               var myclass =response.classname
+               $(myclass).remove()
+                   
+            }
+        });
+    });
+</script>
+
+
+
+<script>
+     $(document).on('click', '.apply-coupon', function(e) {
+     e.preventDefault();
+     var code = $('#couponcode').val();      
+     
+     $.ajax({
+           url: "{% url 'home:checkcouponcode' %}",
+           method: "POST",
+           data: {
+               'code': code,
+               
+           },
+           success: function(response) {
+              p = response.pass   
+              if (p =='pass'){
+                        var a = parseFloat(response.final_amount).toFixed(2);
+                        var b = parseFloat(response.discount).toFixed(2);
+                        var code = response.code
+                        $('#discount-applied').removeClass('d-none');
+                        $('#final-discount').html('₹'+b);
+                        $('#final-amount').html('₹'+a)
+                        $('#couponcode').val(code)
+                        $('#couponcode2').val(code)
+
+                }
+                else{
+                    alert('Coupon Code Cannot Be Applied')
+                }
+            }
+       });
+   });
+
+</script>
+
+
+<script>
+    $(document).on('click', '#submit2', function (e) {
+        e.preventDefault();
+        $('#formend').submit();
+    });
+
+</script>

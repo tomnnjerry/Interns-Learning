@@ -1,0 +1,88 @@
+{% load static %}
+<div class="header-bottom line">
+    <div class="container-full px_15 lg-px_40">
+        <div class="wrapper-header d-flex justify-content-center align-items-center">
+            <nav class="box-navigation text-center">
+                <ul class="box-nav-ul d-flex align-items-center justify-content-center gap-30">
+                    <li class="menu-item">
+                        <a href="{% url 'home:home' %}" class="item-link">Home</a>
+                        
+                    </li>
+                    <li class="menu-item">
+                        <a href="{% url 'home:about' %}" class="item-link">
+                           About</a></li>
+
+                    <li class="menu-item">
+                        <a href="#" class="item-link">Shop<i class="icon icon-arrow-down"></i></a>
+                        <div class="sub-menu mega-menu">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-lg-2">
+                                        <div class="mega-menu-item">
+                                            <div class="menu-heading">Shop layouts</div>
+                                            <ul class="menu-list">
+                                                <li><a href="#" class="menu-link-text link">Default</a></li>
+                                                
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <div class="mega-menu-item">
+                                            <div class="menu-heading">Features</div>
+                                            <ul class="menu-list">
+                                                <li><a href="shop-link.html" class="menu-link-text link">Pagination links</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <div class="mega-menu-item">
+                                            <div class="menu-heading">Product styles</div>
+                                            <ul class="menu-list">
+                                                <li><a href="product-style-list.html" class="menu-link-text link">Product style list</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="collection-item hover-img">
+                                            <div class="collection-inner">
+                                                <a href="shop-men.html" class="collection-image img-style">
+                                                    <img class="lazyload" data-src="{% static 'images/collections/collection-1.jpg' %}" src="{% static 'images/collections/collection-1.jpg' %}" alt="collection-demo-1">
+                                                </a>
+                                                <div class="collection-content">
+                                                    <a href="shop-men.html" class="tf-btn hover-icon btn-xl collection-title fs-16"><span>Men</span><i class="icon icon-arrow1-top-left"></i></a>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-3">
+                                        <div class="collection-item hover-img">
+                                            <div class="collection-inner">
+                                                <a href="shop-women.html" class="collection-image img-style">
+                                                    <img class="lazyload" data-src="{% static 'images/collections/collection-2.jpg' %}" src="{% static 'images/collections/collection-2.jpg' %}" alt="collection-demo-1">
+                                                </a>
+                                                <div class="collection-content">
+                                                    <a href="shop-women.html" class="tf-btn btn-xl collection-title fs-16 hover-icon"><span>Women</span><i class="icon icon-arrow1-top-left"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a href="{% url 'home:contact' %}" class="item-link">
+                            Contact Us</a></li>
+                </ul>
+            </nav>
+            <ul class="header-list-categories tf-lg-hidden">
+                <li class="categories-item active"><a href="" class="text-uppercase">Women</a></li>
+                <li class="categories-item"><a href="" class="text-uppercase">Men</a></li>
+                <li class="categories-item"><a href="" class="text-uppercase">Kids</a></li>
+                <li class="categories-item"><a href="" class="text-uppercase">Find a Store</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

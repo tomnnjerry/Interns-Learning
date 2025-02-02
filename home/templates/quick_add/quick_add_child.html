@@ -1,0 +1,94 @@
+
+{% load static %}
+<div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+        <div class="header">
+            <span class="icon-close icon-close-popup" data-bs-dismiss="modal"></span>
+        </div>
+        <div class="wrap">
+            <div class="tf-product-info-item">
+                <div class="image">
+                    <img src="{{product.featured_image.url}}" alt="">
+                </div>
+                <div class="content">
+                    {% if product %}
+                    <a href="{% url 'home:product_detail' product.slug %}">{{product.name}}</a>
+                    {% else %}
+                    <a href="#">{{product.name}}</a>
+                    {% endif %}
+                    
+                    <div class="tf-product-info-price">
+                        <!-- <div class="price-on-sale">$8.00</div>
+                        <div class="compare-at-price">$10.00</div>
+                        <div class="badges-on-sale"><span>20</span>% OFF</div> -->
+                        <div class="price">₹ {{product.price}}</div>
+                        {% if product.actual_price %}
+                        <div class="price">
+                            <small class="anisha-discount">
+                                ₹{{product.actual_price}}
+                            </small>  
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="tf-product-info-variant-picker mb_15">
+                <!-- temp1 --><!-- temp1 end-->
+                <div class="variant-picker-item">
+                    <div class="variant-picker-label">
+                        Select Size
+                    </div>
+                    <div class="variant-picker-values">
+                        
+                        {% for i in product.size.all  %}
+                        <input type="radio" name="size" id="values-{{i.name}}" {% if forloop.counter == 1 %}checked{% endif %} >
+                        <label class="style-text size-label" for="values-{{i.name}}" data-size="{{i.name}}">
+                            <p>{{i.name}}</p>
+                        </label>
+                        {% endfor %}
+                            
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="tf-product-info-quantity mb_15">
+                <div class="quantity-title fw-6">Quantity</div>
+                <div class="wg-quantity">
+                    <span class="btn-quantity minus-btn" data-id="{{product.id}}">-</span>
+                    <input type="text" name="number" value="1">
+                    <span class="btn-quantity plus-btn" data-id="{{product.id}}">+</span>
+                </div>
+            </div>
+            <div class="tf-product-info-buy-button">
+                <form class="" novalidate>
+                    
+          
+                        <a href="javascript:void(0);" 
+                            class="tf-btn btn-fill justify-content-center fw-6 fs-16 flex-grow-1 animate-hover-btn btn-add-to-cart manish-add-to-cart" data-id="{{product.id}}" data-qty="1" 
+                            data-size="{% for i in product.size.all %}{% if forloop.counter == 1 %}{{i.name}}{% endif %}{% endfor %}" >
+                           <span id="change-cart-message">
+                                <span >Add to cart :&nbsp;₹</span><span id="qa-price" class="tf-qty-price">{{product.price}}</span>
+                            </span>
+                        
+                        </a>
+                
+           
+                    
+                    
+                    <div class="tf-product-btn-wishlist btn-icon-action" data-id="{{product.id}}">
+                        <i class="icon-heart"></i>
+                        <i class="icon-delete"></i>
+                    </div>
+                    
+                    <div class="w-100">
+                        <a href="#" class="btns-full checkout-btn d-none"> Buy Now </a>
+                        <a href="#" class="payment-more-option"> 
+                             <i class="fa fa-whatsapp"> </i>
+                              Request Whatsapp Support
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

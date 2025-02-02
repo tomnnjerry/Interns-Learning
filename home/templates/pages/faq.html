@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+
+{% endblock header %}
+
+{% block css %}
+    
+{% endblock css %}
+    
+
+
+{% block body %}
+    <!-- page-title -->
+    <div class="tf-page-title style-2">
+        <div class="container-full">
+            <div class="heading text-center">Help Center</div>
+        </div>
+    </div>
+    <!-- /page-title -->
+    <!-- FAQ -->
+    <section class="flat-spacing-11">
+        <div class="container">
+            <div class="tf-accordion-wrap d-flex justify-content-between">
+                <div class="content">
+                    <h5 class="mb_24">Shopping Information</h5>
+                    <div class="flat-accordion style-default has-btns-arrow mb_60">
+                        <div class="flat-toggle active">
+                            <div class="toggle-title active">What makes Koxari unique?</div>
+                            <div class="toggle-content">
+                                <p>
+                                    At Koxari, we redefine luxury with designs that blend heritage with modern sophistication. Proudly made in India, 
+                                    each piece is meticulously crafted using sustainable, high-quality materials, ensuring both elegance and durability. 
+                                    Our collections are exclusive and limited, offering you a chance to own a piece of fashion history that 
+                                    stands out in both quality and design.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flat-toggle">
+                            <div class="toggle-title">Are Koxari pieces sustainably made?</div>
+                            <div class="toggle-content">
+                                <p>
+                                    Sustainability is at the heart of Koxari. Proudly made in India, we partner with local artisans to create timeless pieces 
+                                    using ethically sourced materials and environmentally conscious practices. When you shop with us, you invest in 
+                                    craftsmanship that prioritizes quality and respects the planet.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flat-toggle">
+                            <div class="toggle-title">Do you offer size customization or bespoke tailoring?</div>
+                            <div class="toggle-content">
+                                <p>
+                                    Yes, we offer bespoke tailoring for select pieces, ensuring a perfect fit and personalization. Our "Made in India" heritage 
+                                    allows us to collaborate directly with skilled artisans, bringing your vision to life with unmatched craftsmanship.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flat-toggle">
+                            <div class="toggle-title">Can I visit your workshop or learn about your process?</div>
+                            <div class="toggle-content">
+                                <p>
+                                    Absolutely! As part of our "Made in India" commitment, we offer exclusive visits to our workshops for clients who wish to 
+                                    witness the craftsmanship behind Koxari's designs. Contact us to arrange a visit and experience the artistry firsthand.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <h5 class="mb_24">Payment Information</h5>
+                    <div class="flat-accordion style-default has-btns-arrow mb_60">
+                        <div class="flat-toggle">
+                            <div class="toggle-title">What payment methods do you accept?</div>
+                            <div class="toggle-content">
+                                <p>
+                                    We accept all major payment methods, including credit cards (Visa, MasterCard, American Express), UPI, net banking, and PayPal. 
+                                    As a brand made in India, we also support domestic payment options for a seamless shopping experience.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flat-toggle">
+                            <div class="toggle-title">Do you offer installment payment options?</div>
+                            <div class="toggle-content">
+                                <p>
+                                    Yes, we offer easy installment plans (EMI) for purchases made within India and internationally. This option is available 
+                                    at checkout for eligible transactions, allowing you to own our luxurious designs without upfront financial strain.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <h5 class="mb_24">Order Returns</h5>
+                    <div class="flat-accordion style-default has-btns-arrow">
+                        <div class="flat-toggle">
+                            <div class="toggle-title">What is your return policy?</div>
+                            <div class="toggle-content">
+                                <p>
+                                    At Koxari, we stand behind the quality of our "Made in India" products. If you’re not completely satisfied with your purchase, 
+                                    you may return it within 14 days of delivery. Items must be unworn, unwashed, and in their original packaging. Custom-made 
+                                    or personalized items are non-refundable.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flat-toggle">
+                            <div class="toggle-title">Do you offer exchanges?</div>
+                            <div class="toggle-content">
+                                <p>
+                                    Yes, we offer exchanges on eligible items. This service allows you to experience the full satisfaction of owning a "Made in India" 
+                                    masterpiece that fits perfectly with your needs. Simply initiate an exchange request within 14 days of delivery.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="box tf-other-content radius-10 bg_grey-8">
+                    <h5 class="mb_20">Have a question</h5>
+                    <p class="text_black-2 mb_40">If you have an issue or question that requires immediate assistance, you can click the button below to chat live with a Customer Service representative.<br><br>Please allow 06 - 12 business days from the time your package arrives back to us for a refund to be issued.</p>
+                    <div class="d-flex gap-20 align-items-center">
+                        <a href="{% url 'home:contact' %} class="tf-btn radius-3 btn-fill animate-hover-btn justify-content-center">Contact us</a>
+                        <a href="#" class="tf-btn btn-line">Whatsapp chat<i class="icon icon-arrow1-top-left"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /FAQ -->
+{% endblock body %}
+    
+
+
+{% block js %}
+    
+{% endblock js %}

@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+
+{% endblock header %}
+
+{% block css %}
+    
+{% endblock css %}
+    
+
+
+{% block body %}
+<div class="tf-page-title">
+    <div class="container-full">
+        <div class="heading text-center">Dashboard</div>
+    </div>
+</div>
+<div class="btn-sidebar-account">
+    <button data-bs-toggle="offcanvas" data-bs-target="#mbAccount" aria-controls="offcanvas"><i class="icon icon-sidebar-2"></i></button>
+</div>
+<section class="flat-spacing-11">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="wrap-sidebar-account">
+                    <ul class="my-account-nav">
+                        <li><span class="my-account-nav-item active">My Orders</span></li>
+                        <li><a href="" class="my-account-nav-item">Address</a></li>
+                        <li><a href="" class="my-account-nav-item">Account Details</a></li>
+                        <li><a href="{% url 'home:view_wishlist' %}" class="my-account-nav-item">Wishlist</a></li>
+                        <li><a href="" class="my-account-nav-item">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-9">
+                <div class="my-account-content account-order">
+                    <div class="wrap-account-order">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th class="fw-6">Order</th>
+                                    <th class="fw-6">Date</th>
+                                    <th class="fw-6">Status</th>
+                                    <th class="fw-6">Total</th>
+                                    <th class="fw-6">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="tf-order-item">
+                                    <td>
+                                        #123
+                                    </td>
+                                    <td>
+                                        August 1, 2024
+                                    </td>
+                                    <td>
+                                        On hold
+                                    </td>
+                                    <td>
+                                        $200.0 for 1 items
+                                    </td>
+                                    <td>
+                                        <a href="my-account-orders-details.html" class="tf-btn btn-fill animate-hover-btn rounded-0 justify-content-center">
+                                            <span>View</span>
+                                        </a>
+                                    </td>
+                                </tr>
+                                
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% include 'account/sb.html' %}
+{% endblock body %}
+    
+
+
+{% block js %}
+    
+{% endblock js %}

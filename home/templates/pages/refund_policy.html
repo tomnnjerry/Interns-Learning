@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+
+{% endblock header %}
+
+{% block css %}
+    
+{% endblock css %}
+    
+
+
+{% block body %}
+    <!-- page-title -->
+    <div class="tf-page-title style-2">
+        <div class="container-full">
+            <div class="heading text-center">Refund Policy</div>
+        </div>
+    </div>
+    <!-- /page-title -->
+    <!-- FAQ -->
+    <section class="flat-spacing-11">
+        <div class="container">
+            <div class="tf-accordion-wrap d-flex justify-content-between">
+               
+                <div class="content">
+                    <h5 class="mb_24">Refund Policy</h5>
+                    <div class="flat-accordion style-default has-btns-arrow mb_60">
+                        <div class="flat-toggle active">
+                            <div class="toggle-title active">What is the eligibility for refunds and exchanges?</div>
+                            <div class="toggle-content">
+                                <p>
+                                    - <strong>Time Frame</strong>: Customers may return items within [14 days] from the date of delivery.<br>
+                                    - <strong>Condition</strong>: Items must be unused, unwashed, and in their original packaging with all tags intact.<br>
+                                    - <strong>Non-Returnable Items</strong>: Certain items, such as [perishable goods, intimate apparel, and custom-made products], are not eligible for return or exchange.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flat-toggle">
+                            <div class="toggle-title">How do I initiate a return?</div>
+                            <div class="toggle-content">
+                                <p>
+                                    - <strong>Initiation</strong>: To initiate a return, contact our customer service at [support@koxari.com] with your order details and reason for return.<br>
+                                    - <strong>Shipping</strong>: Customers are responsible for return shipping costs. We recommend using a trackable shipping service.<br>
+                                    - <strong>Inspection</strong>: Upon receipt, items will be inspected. If approved, a refund or exchange will be processed.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flat-toggle">
+                            <div class="toggle-title">How are refunds processed?</div>
+                            <div class="toggle-content">
+                                <p>
+                                    - <strong>Method</strong>: Refunds will be issued to the original payment method.<br>
+                                    - <strong>Processing Time</strong>: Please allow [7-10 business days] for the refund to reflect in your account.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flat-toggle">
+                            <div class="toggle-title">Can I cancel my order?</div>
+                            <div class="toggle-content">
+                                <p>
+                                    - <strong>Order Cancellation</strong>: Orders can be canceled within [24 hours] of placement. After this period, cancellations are not guaranteed.<br>
+                                    - <strong>Cancellation Charges</strong>: No cancellation charges apply if canceled within the specified time frame.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flat-toggle">
+                            <div class="toggle-title">What are the exceptions to the refund policy?</div>
+                            <div class="toggle-content">
+                                <p>
+                                    - <strong>Damaged or Defective Items</strong>: If you receive a damaged or defective item, please contact us immediately for a replacement or refund.<br>
+                                    - <strong>Sale Items</strong>: Only regular-priced items may be refunded; sale items are final sale.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flat-toggle">
+                            <div class="toggle-title">How can I contact Koxari for refund-related inquiries?</div>
+                            <div class="toggle-content">
+                                <p>
+                                    For any questions or concerns regarding our Refund and Cancellation Policy, please reach out to us at:
+                                </p>
+                                <ul>
+                                    <li><strong>Email</strong>: [support@koxari.com]</li>
+                                    <li><strong>Address</strong>: [123 Fashion Street, Mumbai, India]</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="box tf-other-content radius-10 bg_grey-8">
+                    <h5 class="mb_20">Have a question</h5>
+                    <p class="text_black-2 mb_40">If you have an issue or question that requires immediate assistance, you can click the button below to chat live with a Customer Service representative.<br><br>Please allow 06 - 12 business days from the time your package arrives back to us for a refund to be issued.</p>
+                    <div class="d-flex gap-20 align-items-center">
+                        <a href="{% url 'home:contact' %} class="tf-btn radius-3 btn-fill animate-hover-btn justify-content-center">Contact us</a>
+                        <a href="#" class="tf-btn btn-line">Whatsapp chat<i class="icon icon-arrow1-top-left"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /FAQ -->
+{% endblock body %}
+    
+
+
+{% block js %}
+    
+{% endblock js %}

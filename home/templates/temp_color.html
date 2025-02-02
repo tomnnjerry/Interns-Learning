@@ -1,0 +1,30 @@
+<!-- temp1 --><!-- temp1 end--> 
+<!-- 24 quick_add_child -->
+<div class="variant-picker-item">
+    <div class="variant-picker-values">
+       
+        
+        {% for i in colors %}
+        <input id="values-{{i.name}}" name="color" type="radio" name="color" >
+        <label class="hover-tooltip radius-60" for="values-{{i.name}}" data-value="{{i.name}}">
+            <span class="btn-checkbox" style="background-color:{{i.color.code}};"></span>
+            <span class="tooltip">{{i.name}}</span>
+        </label>
+        {% endfor %}
+            
+        
+    </div>
+</div>
+
+
+
+<!-- extra model -->
+<!-- class ProductColors(models.Model):
+    name = models.CharField(max_length=255, unique=True)
+    product = models.ForeignKey(Product, related_name='products', on_delete=models.CASCADE)
+    color = models.ForeignKey(Color, related_name='products', on_delete=models.CASCADE)
+    price = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)
+    featured_image = models.ImageField(upload_to='products/', blank=True, null=True)
+    stock = models.PositiveIntegerField()
+    def __str__(self):
+        return self.name -->

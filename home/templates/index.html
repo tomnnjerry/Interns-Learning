@@ -1,0 +1,554 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+
+{% endblock header %}
+
+{% block css %}
+    
+{% endblock css %}
+    
+
+
+{% block body %}
+ <!-- categories -->
+ <section class="flat-spacing-20">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="tf-categories-wrap">
+                    <div class="tf-categories-container">
+                        
+                        
+                        {% for ie in pre_collection  %}
+                        <div class="collection-item-circle hover-img">
+                            <a href="{% url 'home:product' %}" class="collection-image img-style">
+                                <img class="lazyload" data-src="{{ie.image.url}}" 
+                                src="{{ie.image.url}}" alt="collection-img">
+                            </a>
+                            <div class="collection-content text-center">
+                                <a href="{% url 'home:product' %}" class="link title fw-6">{{ie.name}}</a>
+                            </div>
+                        </div>
+                        
+                        {% endfor %}
+                            
+
+                        <div class="collection-item-circle hover-img">
+                            <div class="has-saleoff-wrap position-relative">
+                                <a href="" class="collection-image img-style">
+                                    <img class="lazyload" data-src="{% static 'images/collections/sale.jpg' %}" src="{% static 'images/collections/sale.jpg' %}" alt="collection-img">
+                                </a>
+                                <div class="sale-off fw-5">Limited Pcs</div>
+                            </div>
+                            <div class="collection-content text-center">
+                                <a href="" class="link title fw-6">Shop Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tf-shopall-wrap">
+                        <div class="collection-item-circle tf-shopall">
+                            <a href="{% url 'home:product' %}" class="collection-image img-style tf-shopall-icon">
+                                <i class="icon icon-arrow1-top-left"></i>
+                            </a>
+                            <div class="collection-content text-center">
+                                <a href="{% url 'home:product' %}" class="link title fw-6">View all</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>  
+<!-- /categories -->
+
+<!-- slider -->
+<div class="tf-slideshow slider-women slider-effect-fade position-relative">
+    <div dir="ltr" class="swiper tf-sw-slideshow" data-preview="1" data-tablet="1" data-mobile="1" data-centered="false" data-space="0" data-loop="true" data-auto-play="false" data-delay="2000" data-speed="1000">
+        <div class="swiper-wrapper">
+            
+            {% for ie in banner %}
+            <div class="swiper-slide" lazy="true">
+                <div class="wrap-slider">
+                    <img class="lazyload" data-src="{{ie.featured_image.url}}" 
+                    src="{{ie.featured_image.url}}" alt="women-slideshow-01" >
+                    <div class="box-content">
+                        <div class="container">
+                            <h1 class="fade-item fade-item-1 text-white">{{ie.name}}</h1>
+                            <p class="fade-item fade-item-2 text-white">{{ie.tagline}}</p>
+                            <a href="{{ie.link}}" class="fade-item fade-item-3 tf-btn btn-fill animate-hover-btn btn-xl radius-60"><span>Shop collection</span><i class="icon icon-arrow-right"></i></a>
+                        </div>                              
+                    </div>
+                </div>
+            </div>
+            
+            {% endfor %}
+                
+        </div>
+    </div>
+    <div class="wrap-pagination">
+        <div class="container">
+            <div class="sw-dots sw-pagination-slider justify-content-center"></div>
+        </div>
+    </div>
+</div>
+<!-- /slider -->
+
+<!-- Seller -->
+<section class="flat-spacing-5 pt_4 flat-seller">
+    <div class="container">
+        <div class="flat-title">
+            <span class="title wow fadeInUp" data-wow-delay="0s">Best Seller</span>
+            <p class="sub-title wow fadeInUp" data-wow-delay="0s">Shop the Latest Styles: Stay ahead of the curve with our newest arrivals</p>
+        </div>
+        <div class="grid-layout loadmore-item wow fadeInUp" data-wow-delay="0s" data-grid="grid-4">
+           
+            <!-- card product 2 -->
+            {% for ie in best_seller.all %}
+                {% include 'product_style1.html' %}
+            {% endfor %}
+                
+            
+        </div>
+        <div class="tf-pagination-wrap view-more-button text-center">
+            <a href="{% url 'home:product' %}" class="tf-btn style-2 btn-fill rounded-full animate-hover-btn"><span class="text">View All Products</span></a>
+        </div>
+    </div>
+</section>
+<!-- /Seller -->
+
+
+<!-- Lookbook -->
+<section class="flat-spacing-6">
+    <div class="flat-title wow fadeInUp" data-wow-delay="0s">
+        <span class="title">Shop the look</span>
+        <p class="sub-title">Inspire and let yourself be inspired, from one unique fashion to another.</p>
+    </div>
+    <div dir="ltr" class="swiper tf-sw-lookbook" data-preview="2" data-tablet="2" data-mobile="1" data-space-lg="0" data-space-md="0">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" lazy="true">
+                <div class="wrap-lookbook lookbook-1">
+                    <div class="image">
+                        <img class="lazyload" 
+                        data-src="{% static 'look.png' %}" 
+                        src="{% static 'look.png' %}" alt="image-lookbook">
+                    </div>
+                    <div class="lookbook-item item-1">
+                        <div class="inner">
+                            <div class="btn-group dropdown dropup dropdown-center">
+                                <button class="tf-pin-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span></span>
+                                </button>
+                                <ul class="dropdown-menu p-0 border-0">
+                                    <li>
+                                        <div class="lookbook-product">
+                                            <a href="product-detail.html" class="image">
+                                                <img class="lazyload" 
+                                                data-src="{% static 'images/shop/products/img-p2.png' %}" 
+                                                src="{% static 'images/shop/products/img-p2.png' %}" alt="lookbook-item">
+                                            </a>
+                                            <div class="content-wrap">
+                                                <div class="product-title">
+                                                    <a href="#">Jersey thong body</a>
+                                                </div>
+                                                <div class="price">₹112.00</div>
+                                            </div>
+                                            <a href="#quick_view" data-bs-toggle="modal" class=""><i class="icon-view"></i></a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                  
+                </div>
+            </div>
+            <div class="swiper-slide" lazy="true">
+                <div class="wrap-lookbook lookbook-2">
+                    <div class="image">
+                        <img class="lazyload" data-src="{% static 'look1.png' %}"
+                         src="{% static 'look1.png' %}" alt="image-lookbook">
+                    </div>
+                    <div class="lookbook-item item-1">
+                        <div class="inner">
+                            <div class="btn-group dropdown dropup dropdown-center">
+                                <button class="tf-pin-btn" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span></span>
+                                </button>
+                                <ul class="dropdown-menu p-0 border-0">
+                                    <li>
+                                        <div class="lookbook-product">
+                                            <a href="product-detail.html" class="image">
+                                                <img class="lazyload" 
+                                                data-src="{% static 'images/shop/products/img-p5.png' %}" 
+                                                src="{% static 'images/shop/products/img-p5.png' %}" alt="">
+                                            </a>
+                                            <div class="content-wrap">
+                                                <div class="product-title">
+                                                    <a href="#">Ribbed Tank Top</a>
+                                                </div>
+                                                <div class="price">₹20.00</div>
+                                            </div>
+                                            <a href="#quick_view" data-bs-toggle="modal" class=""><i class="icon-view"></i></a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wrap-pagination">
+            <div class="container-full">
+                <div class="sw-dots sw-pagination-lookbook justify-content-center"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Lookbook -->
+<!-- Testimonial -->
+<section class="flat-spacing-5 pt_0 flat-testimonial">
+    <div class="container">
+        <div class="flat-title wow fadeInUp" data-wow-delay="0s">
+            <span class="title">Happy Clients</span>
+            <p class="sub-title">Hear what they say about us</p>
+        </div>
+        <div class="wrap-carousel">
+            <div dir="ltr" class="swiper tf-sw-testimonial" data-preview="3" data-tablet="2" data-mobile="1" data-space-lg="30" data-space-md="15">
+                <div class="swiper-wrapper">
+                    
+                    <div class="swiper-slide">
+                        <div class="testimonial-item style-column wow fadeInUp" data-wow-delay=".1s">
+                            <div class="rating">
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                            </div>
+                            <div class="heading">Great Selection and Quality</div>
+                            <div class="text">
+                                "I love the variety of styles and the high-quality clothing on this web fashion site."
+                            </div>
+                            <div class="author">
+                                <div class="name">Allen Lyn</div>
+                                <div class="metas">Customer from France</span></div>
+                            </div>
+                            <div class="product">
+                                <div class="image">
+                                    <a href="product-detail.html">
+                                        <img class="lazyload" 
+                                        data-src="{% static 'images/shop/products/img-p3.png' %}" 
+                                        src="{% static 'images/shop/products/img-p3.png' %}" alt="">
+                                    </a>
+                                </div>
+                                <div class="content-wrap">
+                                    <div class="product-title">
+                                        <a href="product-detail.html">Cotton jersey top</a>
+                                    </div>
+                                    <div class="price">₹7.95</div>
+                                </div>
+                                <a href="product-detail.html" class=""><i class="icon-arrow1-top-left"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-item style-column wow fadeInUp" data-wow-delay=".2s">
+                            <div class="rating">
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                            </div>
+                            <div class="heading">Best Customer Service</div>
+                            <div class="text">
+                                "I finally found a web fashion site with stylish and flattering options in my size."
+                            </div>
+                            <div class="author">
+                                <div class="name">Peter Rope</div>
+                                <div class="metas">Customer from USA</div>
+                            </div>
+                            <div class="product">
+                                <div class="image">
+                                    <a href="product-detail.html">
+                                        <img class="lazyload" 
+                                        data-src="{% static 'images/shop/products/img-p4.png' %}" 
+                                        src="{% static 'images/shop/products/img-p4.png' %}" alt="">
+                                    </a>
+                                </div>
+                                <div class="content-wrap">
+                                    <div class="product-title">
+                                        <a href="product-detail.html">Ribbed modal T-shirt</a>
+                                    </div>
+                                    <div class="price">From ₹18.95</div>
+                                </div>
+                                <a href="product-detail.html" class=""><i class="icon-arrow1-top-left"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="testimonial-item style-column wow fadeInUp" data-wow-delay=".3s">
+                            <div class="rating">
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                                <i class="icon-star"></i>
+                            </div>
+                            <div class="heading">Great Selection and Quality</div>
+                            <div class="text">
+                                "I love the variety of styles and the high-quality clothing on this web fashion site."
+                            </div>
+                            <div class="author">
+                                <div class="name">Hellen Ase</div>
+                                <div class="metas">Customer from Japan</span></div>
+                            </div>
+                            <div class="product">
+                                <div class="image">
+                                    <a href="product-detail.html">
+                                        <img class="lazyload" 
+                                        data-src="{% static 'images/shop/products/img-p5.png' %}" 
+                                        src="{% static 'images/shop/products/img-p5.png' %}" alt="">
+                                    </a>
+                                </div>
+                                <div class="content-wrap">
+                                    <div class="product-title">
+                                        <a href="product-detail.html">Customer from Japan</a>
+                                    </div>
+                                    <div class="price">₹16.95</div>
+                                </div>
+                                <a href="product-detail.html" class=""><i class="icon-arrow1-top-left"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-sw nav-next-slider nav-next-testimonial lg"><span class="icon icon-arrow-left"></span></div>
+            <div class="nav-sw nav-prev-slider nav-prev-testimonial lg"><span class="icon icon-arrow-right"></span></div>
+            <div class="sw-dots style-2 sw-pagination-testimonial justify-content-center"></div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Banner Collection -->
+<section class="flat-spacing-10 pb_0">
+    <div class="container">
+        <div dir="ltr" class="swiper tf-sw-recent" data-preview="2" data-tablet="2" data-mobile="1.3" data-space-lg="30" data-space-md="15" data-space="15" data-pagination="1" data-pagination-md="1" data-pagination-lg="1">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" lazy="true">
+                    <div class="collection-item-v4 hover-img">
+                        <div class="collection-inner">
+                            <a href="#" class="collection-image img-style radius-10">
+                                <img class="lazyload" data-src="{% static 'look3.png' %}" src="{% static 'look3.png' %}" alt="collection-img">
+                            </a>
+                            <div class="collection-content wow fadeInUp" data-wow-delay="0s">
+                                <h5 class="heading text_white">The January Collection</h5>
+                                <a href="#" class="tf-btn style-3 fw-6 btn-light-icon rounded-full animate-hover-btn"><span>Shop now</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide" lazy="true">
+                    <div class="collection-item-v4 hover-img">
+                        <div class="collection-inner">
+                            <a href="#" class="collection-image img-style radius-10">
+                                <img class="lazyload" data-src="{% static 'look4.png' %}" src="{% static 'look4.png' %}" alt="collection-img">
+                            </a>
+                            <div class="collection-content wow fadeInUp" data-wow-delay="0s">
+                                <h5 class="heading text_white">Olympia's picks</h5>
+                                <a href="#" class="tf-btn style-3 fw-6 btn-light-icon rounded-full animate-hover-btn"><span>Shop now</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /Banner Collection -->
+
+<!-- Best seller -->
+<section class="flat-spacing-15 pb_0">
+    <div class="container">
+        <div class="flat-title wow fadeInUp" data-wow-delay="0s">
+            <span class="title">Koxari Favorites</span>
+            <p class="sub-title">Crafting Timeless Elegance for Generations</p>
+        </div>
+        <div class="hover-sw-nav hover-sw-3">
+            <div dir="ltr" class="swiper tf-sw-product-sell wrap-sw-over" 
+            data-preview="4" data-tablet="3" 
+            data-mobile="2" 
+            data-space-lg="30" 
+            data-space-md="15" data-pagination="2" data-pagination-md="3" data-pagination-lg="3">
+                <div class="swiper-wrapper">
+                    <!-- card product 2 -->
+                    {% for ie in favourite   %}
+                         {% include 'product_style2.html' %}
+                    {% endfor %}    
+                </div>
+            </div>
+            <div class="nav-sw nav-next-slider nav-next-product box-icon w_46 round"><span class="icon icon-arrow-left"></span></div>
+            <div class="nav-sw nav-prev-slider nav-prev-product box-icon w_46 round"><span class="icon icon-arrow-right"></span></div>
+        </div>
+    </div>
+</section>
+<!-- /Best seller -->
+
+<!-- Shop Collection -->
+<section class="flat-spacing-19">
+    <div class="container">
+        <div class="tf-grid-layout md-col-2 tf-img-with-text style-1">
+            <div class="tf-image-wrap wow fadeInUp" data-wow-delay="0s">
+                <img class="lazyload" data-src="{% static 'look5.png' %}" src="{% static 'look5.png' %}" alt="collection-img">
+            </div>
+            <div class="tf-content-wrap wow fadeInUp" data-wow-delay="0s">
+                <div class="heading">The Legacy of <br> Timeless Elegance</div>
+                <p class="description">Discover the story behind Koxari—where heritage meets modern sophistication to craft exclusive pieces for those who value true luxury.</p>
+                <a href="#" class="tf-btn style-2 btn-fill rounded-full animate-hover-btn">Explore Our Story</a>
+            </div>
+            
+        </div>
+    </div>
+</section>
+<!-- /Shop Collection -->
+
+
+
+<!-- Icon box -->
+<section class="flat-spacing-11 pb_0 flat-iconbox wow fadeInUp" data-wow-delay="0s">
+    <div class="container">
+        <div class="wrap-carousel wrap-mobile">
+            <div dir="ltr" class="swiper tf-sw-mobile" data-preview="1" data-space="15">
+                <div class="swiper-wrapper wrap-iconbox">
+                    <div class="swiper-slide">
+                        <div class="tf-icon-box style-border-line text-center">
+                            <div class="icon">
+                                <i class="icon-shipping"></i>
+                            </div>
+                            <div class="content">
+                                <div class="title">Free Shipping</div>
+                                <p>Free shipping on every order</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="tf-icon-box style-border-line text-center">
+                            <div class="icon">
+                                <i class="icon-payment fs-22"></i>
+                            </div>
+                            <div class="content">
+                                <div class="title">Flexible Payment</div>
+                                <p>Pay with Multiple Credit Cards</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="tf-icon-box style-border-line text-center">
+                            <div class="icon">
+                                <i class="icon-return fs-22"></i>
+                            </div>
+                            <div class="content">
+                                <div class="title">14 Day Returns</div>
+                                <p>Within 30 days for an exchange</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="tf-icon-box style-border-line text-center">
+                            <div class="icon">
+                                <i class="icon-suport"></i>
+                            </div>
+                            <div class="content">
+                                <div class="title">Premium Support</div>
+                                <p>Outstanding premium support</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="sw-dots style-2 sw-pagination-mb justify-content-center"></div>
+        </div>
+    </div>
+</section>
+<!-- /Icon box -->
+<!-- Shop Gram -->
+<section class="flat-spacing-1">
+    <div class="container">
+        <div class="flat-title">
+            <span class="title">Wear Koxari  #Instagram</span>
+            <p class="sub-title">
+              
+                 Let our timeless elegance and modern sophistication inspire your next look. 
+                 <br>
+                 Join the conversation and share your style with #KoxariLegacy.
+            </p>
+        </div>
+        <div class="wrap-shop-gram">
+            <div dir="ltr" class="swiper tf-sw-shop-gallery" data-preview="5" data-tablet="3" data-mobile="2" data-space-lg="7" data-space-md="7">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="gallery-item hover-img">
+                        <div class="img-style">
+                            <img class="lazyload img-hover" data-src="{% static 'kl/2.png' %}" 
+                            src="{% static 'kl/2.png' %}" alt="image-gallery">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="gallery-item hover-img">
+                        <div class="img-style">
+                            <img class="lazyload img-hover" data-src="{% static 'kl/3.png' %}" 
+                            src="{% static 'kl/3.png' %}" alt="image-gallery">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="gallery-item hover-img">
+                        <div class="img-style">
+                            <img class="lazyload img-hover" data-src="{% static 'kl/4.png' %}" 
+                            src="{% static 'kl/4.png' %}" alt="image-gallery">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="gallery-item hover-img">
+                        <div class="img-style">
+                            <img class="lazyload img-hover" data-src="{% static 'kl/5.png' %}" 
+                            src="{% static 'kl/5.png' %}" alt="image-gallery">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="gallery-item hover-img">
+                        <div class="img-style">
+                            <img class="lazyload img-hover" data-src="{% static 'kl/6.png' %}" 
+                            src="{% static 'kl/6.png' %}" alt="image-gallery">
+                        </div>
+                    </div>
+                </div>
+
+               
+            </div>
+            </div>
+            <div class="sw-dots sw-pagination-gallery justify-content-center"></div>
+        </div>
+    </div>
+</section>
+<!-- /Shop Gram -->
+{% endblock body %}
+    
+
+
+{% block js %}
+    
+{% endblock js %}

@@ -1,0 +1,137 @@
+{% load static %}
+<div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+        <div class="header">
+            <span class="icon-close icon-close-popup" data-bs-dismiss="modal"></span>
+        </div>
+        <div class="wrap">
+            <div class="tf-product-media-wrap">
+                <div dir="ltr" class="swiper tf-single-slide">
+                    <div class="swiper-wrapper" >
+                        <div class="swiper-slide">
+                            <div class="item">
+                                <img src="{{product.featured_image.url}}" class="w-100" alt="">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="item">
+                                <img src="{{product.featured_image.url}}" class="w-100" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-button-next button-style-arrow single-slide-prev"></div>
+                    <div class="swiper-button-prev button-style-arrow single-slide-next"></div>
+                </div>
+            </div>
+            <div class="tf-product-info-wrap position-relative">
+                <div class="tf-product-info-list">
+                    <div class="tf-product-info-title">
+                        
+                        {% if product %}
+                        <h5><a class="link" href="{% url 'home:product_detail' product.slug %}">{{product.name}}</a></h5>
+                        {% else %}
+                        <h5><a class="link" href="">{{product.name}}</a></h5>
+                        {% endif %}
+                            
+                    </div>
+                    <div class="tf-product-info-badges">
+                        <div class="badges text-uppercase">Best seller</div>
+                        <div class="product-status-content">
+                            <i class="icon-lightning"></i>
+                            <p class="fw-6">Selling fast! 48 people have this in their carts.</p>
+                        </div>
+                    </div>
+                    <div class="tf-product-info-price">
+                        <div class="price">₹{{product.price}}  
+                        </div>
+                        
+                        {% if product.actual_price %}
+                        <div class="price">
+                            <small class="anisha-discount">
+                                ₹{{product.actual_price}}
+                            </small>  
+                        </div>
+                        {% endif %}
+                            
+                    </div>
+                    <div class="tf-product-description">
+                        <p>Nunc arcu faucibus a et lorem eu a mauris adipiscing conubia ac aptent ligula facilisis a auctor habitant parturient a a.Interdum fermentum.</p>
+                    </div>
+
+                    <div class="tf-product-info-variant-picker mb_15">
+                        <!-- temp1 --><!-- temp1 end-->
+                        <div class="variant-picker-item">
+                            <div class="variant-picker-label">
+                                Select Size
+                            </div>
+                            <div class="variant-picker-values">
+                                
+                                {% for i in product.size.all  %}
+                                <input type="radio" name="size" id="values-main-{{i.name}}" {% if forloop.counter == 1 %}checked{% endif %} >
+                                <label class="style-text size-label refresh-cart-message" for="values-main-{{i.name}}" data-size="{{i.name}}">
+                                    <p>{{i.name}}</p>
+                                </label>
+                                {% endfor %}
+                                    
+                               
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tf-product-info-quantity">
+                        <div class="quantity-title fw-6">Quantity</div>
+                        <div class="wg-quantity">
+                            <span class="btn-quantity minus-btn refresh-cart-message" data-id="{{product.id}}">-</span>
+                            <input type="text" name="number" value="1">
+                            <span class="btn-quantity plus-btn refresh-cart-message" data-id="{{product.id}}">+</span>
+                        </div>
+                    </div>
+                    <div class="tf-product-info-buy-button">
+                        <form class="">
+                            
+                            <div id="product-details d-none" style="display: none;">
+                                <input  id="view_product-id" value="{{product.id}}" />
+                                <input type="number" id="view_quantity" value="1" />
+                                <input type="text" id="view_size" value="{% for i in product.size.all %}{% if forloop.counter == 1 %}{{i.name}}{% endif %}{% endfor %}" />
+                            </div>
+
+
+                            <a href="javascript:void(0);"  id="change-cart-message-view"
+                            class="tf-btn btn-fill justify-content-center fw-6 fs-16 flex-grow-1 animate-hover-btn btn-add-to-cart 
+                            manish-add-to-cart-view"
+                            data-id="{{product.id}}" data-qty="1" 
+                            data-size="{% for i in product.size.all %}{% if forloop.counter == 1 %}{{i.name}}{% endif %}{% endfor %}" >
+                            <i class="fa fa-shopping-cart"> </i> &nbsp;
+                                <span>Add to cart: &nbsp;</span>₹<span  id="qv-price"  class="tf-qty-price">{{product.price}}</span>
+                            
+                            </a>
+
+
+                            <a href="javascript:void(0);"  
+                            class="tf-product-btn-wishlist hover-tooltip box-icon bg_white mywishlist wishlist btn-icon-action"
+                            data-id="{{product.id}}"
+                            >
+                                <span class="icon icon-heart"></span>
+                                <span class="tooltip">Add to Wishlist</span>
+                                
+                            </a>
+                            
+                            <div class="w-100 ">
+                                <a href="#" class="d-none checkout-btn btns-full">Proceed To Cart
+                                    </a>
+                                <a href="#" class="payment-more-option">
+                                    <i class="fa fa-whatsapp"> </i>
+                                    Request Whatsapp Support
+                                </a>
+                            </div>
+                        </form>
+                    </div>
+                    <div>
+                        <a href="#" 
+                        class="tf-btn fw-6 btn-line">View full details<i class="icon icon-arrow1-top-left"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,129 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+
+{% endblock header %}
+
+{% block css %}
+    
+{% endblock css %}
+    
+
+
+{% block body %}
+    <!-- page-title -->
+    <div class="tf-page-title style-2">
+        <div class="container-full">
+            <div class="heading text-center">Terms & Conditions</div>
+        </div>
+    </div>
+    <!-- /page-title -->
+    <!-- FAQ -->
+    <section class="flat-spacing-11">
+        <div class="container">
+            <div class="tf-accordion-wrap d-flex justify-content-between">
+               
+                <div class="content">
+                    <h5 class="mb_24">Terms and Conditions</h5>
+                    <div class="flat-accordion style-default has-btns-arrow mb_60">
+                        <div class="flat-toggle active">
+                            <div class="toggle-title active">Acceptance of Terms</div>
+                            <div class="toggle-content">
+                                <p>
+                                    By accessing and using the Koxari website, you agree to comply with and be bound by these Terms and Conditions. If you do not agree with these terms, please refrain from using our website and services.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flat-toggle">
+                            <div class="toggle-title">Eligibility</div>
+                            <div class="toggle-content">
+                                <p>
+                                    To use our website, you must be at least 18 years old or have the consent of a parent or legal guardian. By placing an order, you confirm that you meet these eligibility requirements.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flat-toggle">
+                            <div class="toggle-title">Product Information</div>
+                            <div class="toggle-content">
+                                <p>
+                                    We strive to provide accurate descriptions and images of our products. However, slight variations in color, size, or texture may occur due to differences in display settings or craftsmanship. Such variations do not qualify as defects.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flat-toggle">
+                            <div class="toggle-title">Pricing and Payment</div>
+                            <div class="toggle-content">
+                                <p>
+                                    All prices listed on our website are in [Indian Rupees (₹)] unless otherwise stated. We reserve the right to change prices without prior notice. Payment must be made in full at the time of purchase using the payment methods available at checkout.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flat-toggle">
+                            <div class="toggle-title">Order Processing and Cancellation</div>
+                            <div class="toggle-content">
+                                <p>
+                                    Orders are processed within [1-2 business days]. You may cancel your order within [24 hours] of placing it by contacting our customer service. Once shipped, cancellations are no longer possible.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flat-toggle">
+                            <div class="toggle-title">Intellectual Property</div>
+                            <div class="toggle-content">
+                                <p>
+                                    All content on the Koxari website, including text, images, and graphics, is the property of Koxari and protected by intellectual property laws. Unauthorized use, reproduction, or distribution is prohibited.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flat-toggle">
+                            <div class="toggle-title">Limitation of Liability</div>
+                            <div class="toggle-content">
+                                <p>
+                                    Koxari is not liable for any direct, indirect, or incidental damages arising from the use of our website or products. This includes, but is not limited to, loss of data, profits, or business opportunities.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flat-toggle">
+                            <div class="toggle-title">Governing Law</div>
+                            <div class="toggle-content">
+                                <p>
+                                    These Terms and Conditions are governed by and construed in accordance with the laws of [India]. Any disputes will be subject to the exclusive jurisdiction of the courts in [Mumbai, India].
+                                </p>
+                            </div>
+                        </div>
+                        <div class="flat-toggle">
+                            <div class="toggle-title">Contact Us</div>
+                            <div class="toggle-content">
+                                <p>
+                                    For any questions or concerns regarding these Terms and Conditions, please contact us:
+                                </p>
+                                <ul>
+                                    <li><strong>Email</strong>: [support@koxari.com]</li>
+                                    <li><strong>Phone</strong>: [+91-123-456-7890]</li>
+                                    <li><strong>Address</strong>: [123 Fashion Street, Mumbai, India]</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="box tf-other-content radius-10 bg_grey-8">
+                    <h5 class="mb_20">Have a question</h5>
+                    <p class="text_black-2 mb_40">If you have an issue or question that requires immediate assistance, you can click the button below to chat live with a Customer Service representative.<br><br>Please allow 06 - 12 business days from the time your package arrives back to us for a refund to be issued.</p>
+                    <div class="d-flex gap-20 align-items-center">
+                        <a href="{% url 'home:contact' %} class="tf-btn radius-3 btn-fill animate-hover-btn justify-content-center">Contact us</a>
+                        <a href="#" class="tf-btn btn-line">Whatsapp chat<i class="icon icon-arrow1-top-left"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /FAQ -->
+{% endblock body %}
+    
+
+
+{% block js %}
+    
+{% endblock js %}

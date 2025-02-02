@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<h1> Confirmation  </h1>
+      <form action="{% url 'home:payment_status'  %}" method="POST">
+      {% csrf_token %}
+<h1>Creating order</h1>
+      <fieldset>
+        <legend>
+          <h3>Selected Product</h3>
+        </legend>
+
+          <div class="gender" >
+              Product {{ product_id }} Price {{ price }}
+          </div>
+
+      </fieldset>
+      <fieldset>
+        <legend>
+          <h3>Personal Details</h3>
+        </legend>
+        <div  class="personal-details">
+          <div>
+            <div><label>Name*</label><input type="text" name="name" placeholder="{{ name }}" disabled></div>
+            <div><label>Phone*</label><input type="text" name="name" placeholder="{{ phone }}" disabled></div>
+            <div><label>Email*</label><input type="text" name="name" placeholder="{{ email }}" disabled></div>
+
+
+          </div>
+
+        </div>
+      </fieldset>
+        <script    src="https://checkout.razorpay.com/v1/checkout.js"
+                   data-key="rzp_test_BAFmlfpAivgV6F"
+                   data-amount="{{ price }}"
+                   data-currency="INR"
+                   data-order_id="{{ order_id }}"
+                   data-buttontext="Pay with Razorpay"
+                   data-name="Acme Corp"
+                   data-description="Test transaction"
+                   data-image="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRpWzPOB8s9WRX7JXZ96x1oPESu-eoN5YUFfDKcebTKFn7piPBS&usqp=CAU"
+                   data-prefill.name="{{ name }}"
+                   data-prefill.email="{{ email }}"
+                   data-prefill.contact="{{ phone }}"
+                   data-theme.color="#F37254"></script>
+        <input type="hidden" custom="Hidden Element" name="hidden">
+    </form>
+
+
+
+
+{% endblock body %}
