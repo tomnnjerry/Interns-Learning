@@ -174,13 +174,34 @@ def cart_data_alter(request):
     return JsonResponse({'new_subtotal': new_subtotal, 'quantity':product.quantity, 'mynumber':mynumber,'total':total}) 
 
 
-
+def search_product(request):
+    
+    if request.method == 'GET':
+        q = request.GET.get('q')
+        data1 = Product.objects.filter(name__contains=q).order_by('id')
+        if data1:
+            pass
+        else:
+            data1 = Product.objects.all().order_by('id')
+    
+    page = request.GET.get('page', 1)
+    paginator = Paginator(data1, 6)
+    try:
+        data = paginator.page(page)
+    except PageNotAnInteger:
+        data = paginator.page(1)
+    except EmptyPage:
+        data = paginator.page(paginator.num_pages)
+  
+    context = {
+        'data':data,
+    }
+    return render(request, 'product.html', context)
 
 
 def product(request):
     data1 = Product.objects.all().order_by('id')
     page = request.GET.get('page', 1)
-
     
     paginator = Paginator(data1, 6)
     try:

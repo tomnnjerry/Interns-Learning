@@ -874,9 +874,10 @@
                     </div>
                 </div>
                 <div class="tf-search-sticky">
-                    <form class="tf-mini-search-frm">
+                    <form class="tf-mini-search-frm" action="{% url 'home:search_product' %}" method="GET">
+                        {% csrf_token %}
                         <fieldset class="text">
-                            <input type="text" placeholder="Search" class="" name="text" tabindex="0" value="" aria-required="true" required="">
+                            <input type="text" placeholder="Search" class="" name="q" tabindex="0" value="" aria-required="true" required="">
                         </fieldset>
                         <button class="" type="submit"><i class="icon-search"></i></button>
                     </form>
@@ -888,18 +889,15 @@
                         <div class="tf-col-quicklink">
                             <div class="tf-search-content-title fw-5">Quick link</div>
                             <ul class="tf-quicklink-list">
+                                
+                                {% for ie in pre_collection  %}
                                 <li class="tf-quicklink-item">
-                                    <a href="shop-default.html" class="">Fashion</a>
+                                    <a href="shop-default.html" class="">{{ie.name}}</a>
                                 </li>
-                                <li class="tf-quicklink-item">
-                                    <a href="shop-default.html" class="">Men</a>
-                                </li>
-                                <li class="tf-quicklink-item">
-                                    <a href="shop-default.html" class="">Women</a>
-                                </li>
-                                <li class="tf-quicklink-item">
-                                    <a href="shop-default.html" class="">Accessories</a>
-                                </li>
+                                {% endfor %}
+                                    
+                               
+                               
                             </ul>
                         </div>
                         <div class="tf-col-content">
@@ -919,32 +917,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="tf-loop-item">
-                                    <div class="image">
-                                        <a href="product-detail.html">
-                                            <img src="{% static 'images/products/white-2.jpg' %}" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="content">
-                                        <a href="product-detail.html">Mini crossbody bag</a>
-                                        <div class="tf-product-info-price">
-                                            <div class="price fw-6">$18.00</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="tf-loop-item">
-                                    <div class="image">
-                                        <a href="product-detail.html">
-                                            <img src="{% static 'images/products/white-1.jpg' %}" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="content">
-                                        <a href="product-detail.html">Oversized Printed T-shirt</a>
-                                        <div class="tf-product-info-price">
-                                            <div class="price fw-6">$18.00</div>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>

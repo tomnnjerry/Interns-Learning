@@ -69,6 +69,7 @@ class Product(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     size = models.ManyToManyField(Size, null=True,blank=True)
     best_seller = models.BooleanField(default=True)
+    inspiritation = models.BooleanField(default=False)
     favourite = models.BooleanField(default=True)
     timer= models.PositiveIntegerField(null=True,blank=True)
     class Meta:

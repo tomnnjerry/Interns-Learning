@@ -18,6 +18,7 @@ urlpatterns = [
     path('stock-check-ajax/', views.stock_check_ajax, name='stock_check_ajax'),
     path('cart-data-alter-ajax/', views.cart_data_alter, name='cart_data_alter'),
     path('wishlist/', views.wishlist, name='wishlist'),
+    path('search-product/', views.search_product, name='search_product'),
     
 
 
